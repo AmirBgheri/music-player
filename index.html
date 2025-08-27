@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/output.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>Document</title>
+
+</head>
+
+<body class="w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
+  style="background-image: url(img/Moderne\ woonkamer\ met\ open\ haard.png);">
+  <section class="flex w-full h-11/12 flex-wrap ">
+    <div class="mt-[5%] w-full h-1/12 flex justify-center items-center">
+      <div
+        class="flex w-11/12 md:w-1/2 h-8/12 md:h-full justify-center items-center  rounded-4xl backdrop-blur-lg border-[0.1px] border-solid border-white">
+        <img src="img/download-removebg-preview.png" alt="" class="w-1/5 flex justify-start h-full object-contain">
+        <div
+          class="w-3/5 h-1/2 flex justify-center items-center flex-nowrap border-[0.2px] border-solid border-white rounded-3xl">
+          <input type="text" class="w-full pl-1.5 text-white border-transparent rounded-3xl">
+          <button class=" h-full flex items-center"><img src="img/video_search_40dp_FFF_FILL0_wght400_GRAD0_opsz40.png"
+              alt="" class="object-contain h-[120%]"></button>
+        </div>
+        <div class="w-1/5 flex justify-center ">
+          <div class="w-16 h-8 rounded-3xl  flex items-center justify-end"
+            style="background-image: url(img/images.jpg);">
+            <div class="w-6 h-6 rounded-[50%] bg-amber-900 "></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- serach bar end -->
+
+    <!-- main part start// -->
+    <section class="w-full h-[50vh] min-h-[80vh] flex justify-center items-center select-none">
+      <ul
+        class="sidebar w-1/12 md:hidden h-2/12 bg-white/20 rounded-3xl flex justify-center items-center mr-6 flex-wrap relative group cursor-pointer">
+        <li class="w-full h-1/5 flex justify-center items-center  text-2xl flex-wrap top-0 text-white">
+          ❤︎
+        </li>
+        <span class="absolute top-0 text-sm  text-white px-3 py-1 rounded-3xl 
+           opacity-0 translate-y-2 
+           group-hover:opacity-100 group-hover:translate-y-0 
+           transition-all duration-500 ease-in-out bg-white/10 backdrop:blur-lg">
+          favorite songs
+        </span>
+      </ul>
+      <div id="side-bar" class="favorites fixed  md:hidden w-full h-5/12 z-10 overflow-y-scroll flex-wrap my-2 bg-black/80 left-[-10000px]
+       [&::-webkit-scrollbar-track]:bg-none
+       [&::-webkit-scrollbar]:w-1
+       [&::-webkit-scrollbar]:h-1
+       [&::-webkit-scrollbar-thumb]:bg-white
+       [&::-webkit-scrollbar]:rounded-full">
+        <div class="w-full flex items-center justify-between">
+          <h2 class="text-white text-3xl font-bold my-1 capitalize">favorite songs</h2>
+          <i class="close-fav-sidebar pr-2 text-white text-2xl">🇽</i>
+        </div>
+      </div>
+
+
+      <h2 class="lg:block hidden text-white text-3xl font-bold my-5 ">TOP______</h2>
+      <div
+        class=" w-9/12 h-full rounded-4xl backdrop-blur-lg bg-white/5 border-l-[0.1px] border-r-[0.1px] border-solid border-white flex justify-center  flex-wrap">
+        <h1 class="block lg:hidden text-white text-3xl font-bold text-center">_______TOP SONG_______</h1>
+        <div
+          class="slider w-9/12 md:w-11/12 md:h-7/12 h-1/2  rounded-3xl mt-3  flex justify-center items-center  backdrop-blur-md">
+          <swiper-container class="mySwiper w-full md:pt-10 md:pb-10 pb-3 pt-3 backdrop-blur-2xl bg-none"
+            pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="auto"
+            coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+            coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+
+
+          </swiper-container>
+
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+        </div>
+        <!-- end main part -->
+        <section id="player" class="w-full h-[30vh] flex justify-center items-center flex-wrap md:flex-nowrap">
+          <!-- play song  -->
+          <div class="w-3/5 h-full flex justify-center items-center flex-wrap">
+            <div class="w-full h-[45%] flex justify-center items-center flex-wrap ">
+              <img id="player-cover" class="h-3/4 object-cover rounded-[50%]" src="img/disk-removebg-preview.png"
+                alt="">
+              <p id="player-title" class="text-white font-bold ml-2">Song Name</p>
+              <p id="player-artist" class="hidden md:block text-gray-300 ml-2">Artist Name</p>
+               <div class="">
+              <div class="relative flex flex-col items-center">
+                <i class="vol w-12 h-12 bg-white/20 rounded-full flex justify-center items-center cursor-pointer opacity-100">
+                  🔈
+                </i>
+                <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1"
+                  class="absolute bottom-full left-0 w-32 opacity-100 pointer-events-none transition-all duration-300 ease-in-out accent-white/10 rotate-270 " />
+              </div>
+            </div>
+            </div>
+            <input type="range" id="player-progress" value="0" max="100" class="w-full md:w-3/5 accent-white/10 h-6">
+
+            <!-- موبایل: دکمه ولوم شناور -->
+           
+
+
+
+
+
+            <div class="w-full h-1/5 flex justify-center ">
+              <div class="w-full flex justify-center items-center">
+                <button id="prev-btn" class="bg-black rounded-3xl p-2">
+                  <img src="img/skip_previous_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                </button>
+                <div class="relative w-[150px] h-[150px] flex justify-center items-center">
+                  <button id="play-btn" class="absolute bg-black rounded-3xl p-2 text-white">▶</button>
+                </div>
+                <button id="next-btn" class="bg-black rounded-3xl p-2">
+                  <img src="img/skip_next_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- favorite songs  -->
+          <div class="favorites hidden md:flex w-2/5 h-[24vh] overflow-y-scroll flex-wrap my-2
+       [&::-webkit-scrollbar-track]:bg-none
+       [&::-webkit-scrollbar]:w-1
+       [&::-webkit-scrollbar]:h-1
+       [&::-webkit-scrollbar-thumb]:bg-white
+       [&::-webkit-scrollbar]:rounded-full">
+            <h2 class="text-white text-3xl font-bold my-1 capitalize">favorite songs</h2>
+          </div>
+        </section>
+
+      </div>
+      <h2 class="lg:block hidden text-white text-3xl font-bold my-5 ">______SONGS</h2>
+    </section>
+  </section>
+
+  <!-- دکمه قلب برای موبایل -->
+
+  </div>
+  <script src="js/master.js"></script>
+</body>
+
+</html>
+
+</body>
+
+</html>
