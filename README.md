@@ -21,10 +21,10 @@ Features a beautiful UI/UX with smooth animations, favorite songs, and a respons
 ## 📸 Screenshots
 
 ### 🎼 Overlay Intro
-<img src="img" width="600" />
+<img src="img/Screenshot 2025-09-05 113146.png" width="600" />
 
 ### 🎧 Main Player
-<img src="img/player.png" width="600" />
+<img src="img/Screenshot 2025-09-05 112231.png" width="600" />
 
 ---
 
