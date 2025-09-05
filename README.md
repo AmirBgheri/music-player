@@ -4,6 +4,8 @@ A modern, responsive **music player app** built with **HTML, TailwindCSS, and Ja
 Features a beautiful UI/UX with smooth animations, favorite songs, and a responsive design for both desktop and mobile.
 
 ---
+<a href="https://amirbgheri.github.io/music-player/">link demo </a>
+---
 
 ## ✨ Features
 - 🎵 **Play / Pause / Next / Previous** controls  
@@ -19,7 +21,7 @@ Features a beautiful UI/UX with smooth animations, favorite songs, and a respons
 ## 📸 Screenshots
 
 ### 🎼 Overlay Intro
-<img src="img/overlay.png" width="600" />
+<img src="img" width="600" />
 
 ### 🎧 Main Player
 <img src="img/player.png" width="600" />
