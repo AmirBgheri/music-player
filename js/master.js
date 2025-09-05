@@ -110,6 +110,7 @@ function saveFavorites() {
 // 🎵 مدیریت سایدبار موبایل
 // =========================
 favBtn.addEventListener('click', () => {
+  sideBar.style.opacity='1'
   sideBar.classList.remove('-translate-x-full');
   sideBar.classList.add('translate-x-0');
 });
@@ -328,3 +329,4 @@ fetch(url)
     });
   })
   .catch(err => console.log("خطا در دریافت دیتا:", err));
+
