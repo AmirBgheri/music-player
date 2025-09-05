@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/output.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Italiana&family=Audiowide&display=swap"
+    rel="stylesheet">
+  <title>music player</title>
+  <style>
+
+  </style>
+</head>
+
+<body id="main-bg" class="w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
+  style="background-image: url(img/Moderne\ woonkamer\ met\ open\ haard.png);">
+  <video id="videobg" autoplay muted loop class="bg-video transition duration-500">
+    <source src="img/guitar-bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div id="overlay" class="fixed w-full h-screen ">
+
+    <h3
+      class="absolute top-10 left-1/2 -translate-x-1/2 z-50 text-3xl md:text-4xl mt-4 font-bold text-white italic drop-shadow-lg w-3/4">
+      Listening a good music....
+    </h3>
+
+    <p
+      class="absolute top-30 left-1/2 -translate-x-1/2 z-50 text-2xl md:text-3xl mt-4 font-bold text-white italic drop-shadow-lg w-3/4">
+      Music is the language of the soul, where words fail, melodies speak
+    </p>
+
+    <button id="play-now" type="button" class="absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer
+           text-white font-medium rounded-full text-lg px-12 py-6 
+           bg-gradient-to-r from-white to-amber-900 
+           hover:from-gray-200 hover:to-yellow-900 
+           focus:ring-4 focus:outline-none focus:ring-amber-700 
+           transition-all duration-500 ease-in-out shadow-lg">
+      Play Now
+    </button>
+    <div class="fixed flex items-end bottom-6 left-6 group w-[400px] h-[280px]">
+      <!-- عکس -->
+      <img src="img/me.jpg" alt="me" class="w-1/2 h-full object-cover rounded-xl shadow-lg" />
+
+      <!-- آیکون‌ها -->
+      <div class="absolute bottom-4 left-4 flex gap-3
+              opacity-0 translate-y-6
+              transition-all duration-500 ease-in-out
+              group-hover:opacity-100 group-hover:translate-y-0">
+
+        <a href="https://instagram.com" target="_blank"
+          class="bg-pink-600 text-white p-2 rounded-full hover:scale-110 transition">
+          <i class="fab fa-instagram"><img src="img/icons8-insta-32.png" alt=""></i>
+        </a>
+        <a href="https://github.com" target="_blank"
+          class="bg-gray-800 text-white p-2 rounded-full hover:scale-110 transition">
+          <i class="fab fa-github"><img src="img/icons8-github-32.png" alt=""></i>
+        </a>
+        <a href="https://jekyllrb.com/" target="_blank"
+          class="bg-blue-600 text-white p-2 rounded-full hover:scale-110 transition">
+          <i class="fas fa-gem"><img src="img/icons8-linkedin-32.png" alt=""></i>
+        </a>
+      </div>
+      <p class="text-md text-center text-white">© 2025 My Music Player</p>
+    </div>
+  </div>
+  <section class="flex w-full h-11/12 flex-wrap ">
+    <div id="header"
+      class="mt-[5%] w-full h-1/12 flex justify-center items-center mb-4 translate-y-[-5000px] transition duration-700">
+      <div
+        class="flex w-11/12 md:w-1/2 h-8/12 md:h-full justify-center items-center  rounded-4xl backdrop-blur-lg border-[0.1px] border-solid border-white">
+        <img src="img/download-removebg-preview.png" alt="" class="w-1/5 flex justify-start h-full object-contain ">
+        <div class="w-3/5 h-1/2 flex justify-center items-center flex-nowrap ">
+          <h1 class="dark text-2xl md:text-4xl italic font-bold text-white tracking-wide"
+            style="font-family: 'Audiowide', sans-serif;">
+            EchoWave
+          </h1>
+        </div>
+        <div class="w-1/5 flex justify-center ">
+          <div id="bg-togglebtn"
+            class="w-16 h-8 bg-gradient-to-r from-zinc-200 to-orange-900 rounded-3xl  flex items-center relative ">
+            <div id="bg-toggle" class="w-6 h-6 rounded-[50%] bg-amber-900 absolute top-[3px] left-10  transition-all duration-500 ease-in-out
+         hover:rotate-180 hover:scale-110 
+         hover:bg-amber-800 hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] cursor-pointer">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- serach bar end -->
+
+    <!-- main part start// -->
+    <section id="main-part"
+      class="w-full h-[50vh] min-h-[80vh] flex justify-center items-center select-none scale-0 transition duration-1000">
+      <ul
+        class="sidebar w-1/12 md:hidden h-2/12 bg-white/20 rounded-3xl flex justify-center items-center mr-6 flex-wrap relative group cursor-pointer">
+        <li class="fav-btn w-full h-1/5 flex justify-center items-center  text-2xl flex-wrap top-0 text-white">
+          ❤️
+        </li>
+
+        <li>
+          <div class="relative flex flex-col items-center">
+            <i class="vol w-12 h-12 flex justify-center items-center cursor-pointer opacity-100">🔈</i>
+            <input type="range" id="volume-control-mobile" class="volume-control absolute bottom-full left-0 w-32 accent-white/80 
+              pointer-events-none rotate-[-90deg] opacity-0 transition-all duration-300 ease-in-out" min="0" max="1"
+              step="0.01" value="1">
+          </div>
+        </li>
+      </ul>
+      <div id="side-bar" class="favorites fixed top-0 left-0 h-full w-3/4 sm:w-2/5 md:hidden 
+            bg-white/20 backdrop-blur-lg shadow-2xl z-50
+            transform -translate-x-full transition-transform duration-500 ease-in-out
+            overflow-y-auto rounded-r-3xl 
+            [&::-webkit-scrollbar]:w-1
+            [&::-webkit-scrollbar-thumb]:bg-white/30 [&::-webkit-scrollbar-thumb]:rounded-full">
+        <div class="flex items-center justify-between p-4 border-b border-white/20">
+          <h2 class="text-white text-2xl font-bold">❤️ Favorites</h2>
+          <button class="close-fav-sidebar text-white text-2xl hover:rotate-90 transition-transform duration-300"><svg
+              xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg></button>
+        </div>
+        <div class="p-3 space-y-2 ">
+          <!-- fav items inject here -->
+        </div>
+      </div>
+
+
+      <h2 class="dark lg:block hidden text-white text-3xl font-bold my-5 ">TOP______</h2>
+      <div
+        class=" w-9/12 h-full rounded-4xl backdrop-blur-lg bg-white/5 border-l-[0.1px] border-r-[0.1px] border-solid border-white flex justify-center  flex-wrap">
+        <h1 id="top-songcolor" class="block lg:hidden text-white text-3xl font-bold text-center">_______TOP SONG_______
+        </h1>
+        <div
+          class="slider w-9/12 md:w-11/12 md:h-7/12 h-1/2  rounded-3xl mt-3  flex justify-center items-center  backdrop-blur-md translate-x-[-5000px] transition duration-[1s]">
+          <swiper-container class="mySwiper w-full md:pt-10 md:pb-10 pb-3 pt-3 backdrop-blur-2xl bg-none"
+            pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="auto"
+            coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+            coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+
+
+          </swiper-container>
+
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+        </div>
+        <!-- end main part -->
+        <section id="player" class="w-full h-[30vh] flex justify-center items-center flex-wrap md:flex-nowrap">
+          <!-- play song  -->
+          <div class="w-3/5 h-full flex justify-center items-center flex-wrap">
+            <div class="w-full h-[45%] flex justify-center items-center flex-wrap ">
+              <img id="player-cover" class="h-3/4 object-cover rounded-[50%]" src="img/dick-removebg-preview.png"
+                alt="">
+              <p id="player-title" class="text-white font-bold ml-2">Song Name by</p>
+              <p id="player-artist" class="hidden md:block text-gray-300 ml-2">Artist Name</p>
+              <div class="">
+
+              </div>
+            </div>
+            <input type="range" id="player-progress" value="0" max="100" class="w-full md:w-3/5 accent-white/10 h-6">
+            <div class="relative flex flex-col items-center">
+              <i
+                class="vol hidden md:flex w-12 h-12 bg-white/20 rounded-full justify-center items-center cursor-pointer opacity-100">🔈</i>
+              <input type="range" id="volume-control-desktop" class="volume-control absolute bottom-full left-5 w-20 accent-white/80 
+              pointer-events-none opacity-0 rotate-[-90deg] transition-all duration-300 ease-in-out" min="0" max="1"
+                step="0.01" value="1">
+            </div>
+            <!-- موبایل: دکمه ولوم شناور -->
+
+
+
+
+
+
+            <div class="w-full h-1/5 flex justify-center ">
+              <div class="w-full flex justify-center items-center">
+                <button id="prev-btn" class="bg-black rounded-3xl p-2">
+                  <img src="img/skip_previous_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                </button>
+                <div class="relative w-[150px] h-[150px] flex justify-center items-center">
+                  <button id="play-btn" class="absolute bg-black rounded-3xl p-2 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                      fill="#fff">
+                      <path d="M320-200v-560l440 280-440 280Z" />
+                    </svg>
+                  </button>
+                </div>
+                <button id="next-btn" class="bg-black rounded-3xl p-2">
+                  <img src="img/skip_next_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- favorite songs  -->
+          <div class="favorites hidden md:flex w-2/5 h-[24vh] overflow-y-scroll flex-wrap my-2
+       [&::-webkit-scrollbar-track]:bg-none
+       [&::-webkit-scrollbar]:w-1
+       [&::-webkit-scrollbar]:h-1
+       [&::-webkit-scrollbar-thumb]:bg-white
+       [&::-webkit-scrollbar]:rounded-full">
+            <h2 class="text-white text-3xl font-bold my-1 capitalize">favorite songs</h2>
+          </div>
+        </section>
+
+      </div>
+      <h2 class="dark lg:block hidden text-white text-3xl font-bold my-5 ">______SONGS</h2>
+    </section>
+  </section>
+
+  <!-- دکمه قلب برای موبایل -->
+
+  </div>
+  <script src="js/master.js"></script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
